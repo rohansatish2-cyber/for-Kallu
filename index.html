@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For Kallu ❤️</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #fff8f8;
+            color: #3c2929;
+            overflow-x: hidden;
+        }
+
+        /* Floating hearts */
+        .heart {
+            position: fixed;
+            bottom: -30px;
+            font-size: 18px;
+            opacity: 0;
+            animation: floatHeart 8s linear infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .heart:nth-child(1) { left: 8%; animation-delay: 1s; }
+        .heart:nth-child(2) { left: 25%; animation-delay: 4s; }
+        .heart:nth-child(3) { left: 48%; animation-delay: 2s; }
+        .heart:nth-child(4) { left: 70%; animation-delay: 6s; }
+        .heart:nth-child(5) { left: 88%; animation-delay: 3s; }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            15% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-110vh) rotate(25deg);
+                opacity: 0;
+            }
+        }
+
+        /* Main sections */
+        section {
+            min-height: 100vh;
+            padding: 70px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        /* Opening */
+        .opening {
+            background:
+                radial-gradient(circle at 20% 20%, #ffe1e6 0%, transparent 30%),
+                radial-gradient(circle at 80% 80%, #f8dfe4 0%, transparent 30%),
+                #fff8f8;
+        }
+
+        .small-text {
+            font-size: 13px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #a87979;
+            margin-bottom: 22px;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(55px, 12vw, 100px);
+            line-height: 0.95;
+            font-weight: 600;
+            color: #542f36;
+            margin-bottom: 25px;
+        }
+
+        .opening-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(23px, 5vw, 34px);
+            color: #76565b;
+            margin-bottom: 40px;
+        }
+
+        .date-pill {
+            display: inline-block;
+            padding: 10px 22px;
+            border: 1px solid #d9b6bb;
+            border-radius: 50px;
+            color: #8b5e65;
+            font-size: 13px;
+            letter-spacing: 1px;
+            margin-bottom: 35px;
+            background: rgba(255,255,255,0.6);
+        }
+
+        .button {
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .primary {
+            background: #633842;
+            color: white;
+            box-shadow: 0 8px 25px rgba(99,56,66,0.2);
+        }
+
+        .primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(99,56,66,0.3);
+        }
+
+        /* Message */
+        .message-section {
+            background: #fff;
+        }
+
+        .section-label {
+            color: #b17b83;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 4px;
+            margin-bottom: 18px;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(38px, 7vw, 60px);
+            color: #542f36;
+            margin-bottom: 35px;
+        }
+
+        .message-card {
+            max-width: 750px;
+            margin: auto;
+            padding: clamp(25px, 6vw, 55px);
+            background: #fffafa;
+            border: 1px solid #f0dfe1;
+            border-radius: 25px;
+            box-shadow: 0 15px 50px rgba(100,50,60,0.06);
+            text-align: left;
+        }
+
+        .message-card p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(18px, 3vw, 23px);
+            line-height: 1.65;
+            color: #554043;
+            margin-bottom: 20px;
+        }
+
+        .message-card .opening-line {
+            font-weight: 700;
+            color: #633842;
+        }
+
+        .signature {
+            text-align: right;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 25px;
+            margin-top: 30px;
+            color: #633842;
+        }
+
+        /* Plan */
+        .plan-section {
+            background: #fff5f6;
+        }
+
+        .timeline {
+            max-width: 700px;
+            margin: 40px auto 0;
+            text-align: left;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 100px 35px 1fr;
+            gap: 15px;
+            min-height: 120px;
+        }
+
+        .time {
+            text-align: right;
+            font-weight: 600;
+            color: #9b6971;
+            padding-top: 3px;
+            font-size: 14px;
+        }
+
+        .timeline-line {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .timeline-line::before {
+            content: "";
+            width: 11px;
+            height: 11px;
+            background: #9b6971;
+            border: 4px solid #f8dfe3;
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        .timeline-line::after {
+            content: "";
+            position: absolute;
+            top: 15px;
+            bottom: -10px;
+            width: 1px;
+            background: #dfc0c5;
+        }
+
+        .timeline-item:last-child .timeline-line::after {
+            display: none;
+        }
+
+        .event {
+            background: rgba(255,255,255,0.8);
+            padding: 20px;
+            border-radius: 18px;
+            margin-bottom: 20px;
+            border: 1px solid #f0dfe1;
+        }
+
+        .event h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 25px;
+            color: #542f36;
+            margin-bottom: 7px;
+        }
+
+        .event p {
+            font-size: 13px;
+            line-height: 1.7;
+            color: #765f62;
+        }
+
+        .little-note {
+            max-width: 600px;
+            margin: 30px auto 0;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            color: #8a666b;
+        }
+
+        /* Final */
+        .final-section {
+            background:
+                radial-gradient(circle at 50% 20%, #f8dfe4, transparent 45%),
+                #fff8f8;
+        }
+
+        .final-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(45px, 9vw, 75px);
+            color: #542f36;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .final-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 25px;
+            color: #76565b;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .yes-button {
+            background: #633842;
+            color: white;
+        }
+
+        .think-button {
+            background: white;
+            color: #633842;
+            border: 1px solid #d9b6bb;
+        }
+
+        .yes-button:hover,
+        .think-button:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Response box */
+        .response {
+            display: none;
+            margin: 35px auto 0;
+            max-width: 500px;
+            padding: 25px;
+            background: white;
+            border-radius: 20px;
+            border: 1px solid #eed9dc;
+            animation: appear 0.6s ease;
+        }
+
+        .response h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 35px;
+            color: #633842;
+            margin-bottom: 10px;
+        }
+
+        .response p {
+            font-size: 14px;
+            color: #765f62;
+            line-height: 1.6;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            section {
+                padding: 60px 16px;
+            }
+
+            .timeline-item {
+                grid-template-columns: 70px 25px 1fr;
+                gap: 10px;
+            }
+
+            .time {
+                font-size: 12px;
+            }
+
+            .event {
+                padding: 16px;
+            }
+
+            .event h3 {
+                font-size: 22px;
+            }
+
+            .message-card p {
+                font-size: 19px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating hearts -->
+    <div class="heart">♡</div>
+    <div class="heart">♡</div>
+    <div class="heart">♡</div>
+    <div class="heart">♡</div>
+    <div class="heart">♡</div>
+
+    <!-- OPENING -->
+    <section class="opening">
+        <div class="container">
+
+            <div class="small-text">A small proposal from Roni</div>
+
+            <h1>Dear Kallu,<br>one more Saturday?</h1>
+
+            <div class="opening-subtitle">
+                This time, I actually planned it. 🥺
+            </div>
+
+            <div class="date-pill">
+                SATURDAY · 3 OCTOBER 2026
+            </div>
+
+            <br>
+
+            <button class="button primary" onclick="scrollToSection('message')">
+                Okay, show me what Roni planned →
+            </button>
+
+        </div>
+    </section>
+
+
+    <!-- MESSAGE -->
+    <section class="message-section" id="message">
+        <div class="container">
+
+            <div class="section-label">Before anything else</div>
+
+            <div class="section-title">
+                I need to say this.
+            </div>
+
+            <div class="message-card">
+
+                <p class="opening-line">
+                    My dear kallu,
+                </p>
+
+                <p>
+                    i know i messed up the plan last time. even you know roni doesnt do that usually but somehow he messed it up last time.
+                </p>
+
+                <p>
+                    I also know this is about something much bigger than ronie just messing up the plan to go out.
+                    i am sorry for that kalluma, i am really really sorry.
+                </p>
+
+                <p>
+                    in these few days without kallu, it is feeling like a part of ronie is missing.
+                    I know you have forgiven me but i also know that i am not the same ronie in your life anymore.
+                </p>
+
+                <p>
+                    It feels like some stranger but again i am to blame, i am not blaming you but it hurts like hell kalluma,
+                    even though i did this to myself it doesnt change the fact that it hurts alva kalluma.
+                </p>
+
+                <p>
+                    Please kalluma, let ronie kallu be the same - they were beautiful.
+                </p>
+
+                <p>
+                    i know i messed up once and you cant even imagine the level of self doubt it has created in me
+                    to do even simple things anymore leave alone even thinking of doing things like what i did last saturday.
+                </p>
+
+                <p>
+                    I am still the same ronie kalluma, your comfort person, your joe, your tonamma, your little ronie,
+                    Just without the bad part that got us into this position.
+                </p>
+
+                <p>
+                    I am shit scared to even send this to you, this might either be a yes or me absolutely getting belted by you.
+                    Hoping for the better one.
+                </p>
+
+                <div class="signature">
+                    Thanks,<br>
+                    Ronie ❤️
+                </div>
+
+            </div>
+
+            <br><br>
+
+            <button class="button primary" onclick="scrollToSection('plan')">
+                Now... the actual plan →
+            </button>
+
+        </div>
+    </section>
+
+
+    <!-- PLAN -->
+    <section class="plan-section" id="plan">
+        <div class="container">
+
+            <div class="section-label">Operation: Saturday</div>
+
+            <div class="section-title">
+                A properly planned day.
+            </div>
+
+            <div class="timeline">
+
+                <!-- 1 -->
+                <div class="timeline-item">
+                    <div class="time">1:30 PM</div>
+
+                    <div class="timeline-line"></div>
+
+                    <div class="event">
+                        <h3>📍 Pickup from Srirampura</h3>
+                        <p>
+                            Roni arrives on the Ather. No last-minute confusion.
+                            No “what are we doing?” crisis.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="timeline-item">
+                    <div class="time">2:00 PM</div>
+
+                    <div class="timeline-line"></div>
+
+                    <div class="event">
+                        <h3>🍽️ Kai Bar & Kitchen</h3>
+                        <p>
+                            Lunch, drinks and beautiful views of our city.
+                            Just enjoy the food, the view and each other's company.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="timeline-item">
+                    <div class="time">After lunch</div>
+
+                    <div class="timeline-line"></div>
+
+                    <div class="event">
+                        <h3>🎮 Amoeba</h3>
+                        <p>
+                            A little fun after lunch. Because apparently
+                            just sitting and eating isn't enough for us.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 4 -->
+                <div class="timeline-item">
+                    <div class="time">Evening</div>
+
+                    <div class="timeline-line"></div>
+
+                    <div class="event">
+                        <h3>🚶 Church Street</h3>
+                        <p>
+                            Walking, shopping and just enjoying the evening.
+                            And yes...
+                            <strong>click nice pictures (i promise i will)</strong>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 5 -->
+                <div class="timeline-item">
+                    <div class="time">After</div>
+
+                    <div class="timeline-line"></div>
+
+                    <div class="event">
+                        <h3>🏠 Return home</h3>
+                        <p>
+                            Ather ride back home and end our little Saturday together.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="little-note">
+                Transportation: Ather 🛵<br>
+                Planning: Roni (yes, seriously this time 😭)
+            </div>
+
+            <br><br>
+
+            <button class="button primary" onclick="scrollToSection('final')">
+                So... here's the important part →
+            </button>
+
+        </div>
+    </section>
+
+
+    <!-- FINAL -->
+    <section class="final-section" id="final">
+        <div class="container">
+
+            <div class="section-label">One last question</div>
+
+            <div class="final-title">
+                So, Kalluma...
+            </div>
+
+            <div class="final-subtitle">
+                Can Roni have his Kallu for one Saturday? ❤️
+            </div>
+
+            <div class="buttons">
+
+                <button class="button yes-button" onclick="sayYes()">
+                    YES, RONI ❤️
+                </button>
+
+                <button class="button think-button" onclick="thinkAboutIt()">
+                    I'll think about it 😌
+                </button>
+
+            </div>
+
+            <div class="response" id="response"></div>
+
+        </div>
+    </section>
+
+
+    <script>
+
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+
+        function sayYes() {
+
+            const response = document.getElementById("response");
+
+            response.style.display = "block";
+
+            response.innerHTML = `
+                <h2>YAYYYYY ❤️</h2>
+                <p>
+                    Saturday officially has a plan.<br><br>
+                    Roni promises to show up, drive carefully,
+                    plan properly and most importantly...
+                    <br><br>
+                    <strong>take the damn pictures this time. 😭📸</strong>
+                </p>
+            `;
+
+            createHearts();
+
+            response.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+        }
+
+        function thinkAboutIt() {
+
+            const response = document.getElementById("response");
+
+            response.style.display = "block";
+
+            response.innerHTML = `
+                <h2>Okay Kallu 😭</h2>
+                <p>
+                    I'll respect that.<br><br>
+                    But just so you know...
+                    Roni has actually planned this one properly. 🥺
+                    <br><br>
+                    Take your time, Kalluma ❤️
+                </p>
+            `;
+
+            response.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+        }
+
+        function createHearts() {
+
+            for (let i = 0; i < 18; i++) {
+
+                const heart = document.createElement("div");
+
+                heart.innerHTML = "❤️";
+
+                heart.style.position = "fixed";
+                heart.style.left = Math.random() * 100 + "vw";
+                heart.style.bottom = "-30px";
+                heart.style.fontSize = (12 + Math.random() * 20) + "px";
+                heart.style.zIndex = "999";
+                heart.style.pointerEvents = "none";
+
+                document.body.appendChild(heart);
+
+                const duration = 2 + Math.random() * 3;
+
+                heart.animate(
+                    [
+                        {
+                            transform: "translateY(0) rotate(0deg)",
+                            opacity: 1
+                        },
+                        {
+                            transform:
+                                "translateY(-110vh) rotate(" +
+                                (Math.random() * 360) +
+                                "deg)",
+                            opacity: 0
+                        }
+                    ],
+                    {
+                        duration: duration * 1000,
+                        easing: "ease-out"
+                    }
+                );
+
+                setTimeout(() => {
+                    heart.remove();
+                }, duration * 1000);
+            }
+        }
+
+    </script>
+
+</body>
+</html>
